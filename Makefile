@@ -25,12 +25,12 @@ format: .install
 	poetry run black .
 
 doctor: .install
-	@echo "$(INFO_COLOR)==> Checking maintainability...$(NO_COLOR)"
+	@echo "$(INFO_COLOR)==> Checking code maintainability...$(NO_COLOR)"
 	poetry run radon cc src
 	poetry run radon cc tests
 
-	@echo "$(INFO_COLOR)==> Checking for dead code...$(NO_COLOR)"
+	@echo "$(INFO_COLOR)==> Loooking for dead code...$(NO_COLOR)"
 	poetry run vulture src tests
 
-	@echo "$(INFO_COLOR)==> Checking for security vulnerabilities...$(NO_COLOR)"
+	@echo "$(INFO_COLOR)==> Looking for security vulnerabilities...$(NO_COLOR)"
 	poetry run bandit --quiet -r src
