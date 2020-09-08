@@ -7,7 +7,11 @@ WARN_COLOR=\x1b[33;01m
 all: check
 
 .install:
+	@echo "$(INFO_COLOR)==> Installing dependencies...$(NO_COLOR)"
 	poetry install && touch .install
+
+nuke:
+	[ -f .install ] && rm .install && rm -rf `poetry env info -p`
 
 qa: format check
 	@echo "$(OK_COLOR)QA checks completed!$(NO_COLOR)"
