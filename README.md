@@ -23,10 +23,13 @@ The above command runs:
   + [radon](https://pypi.org/project/vulture/) to analyze cyclomatic complexity in the code
   + [bandit](https://pypi.org/project/vulture/) to look for security vulnerabilities
 
-### Run quality assurance (i.e., run formatting and tests):
+### Run quality assurance
 ```shell
 make qa
 ```
+The above command runs:
+  + [black](https://github.com/psf/black) to format the code for you
+  + [pytest](https://docs.pytest.org/en/stable/) to run all tests under `tests`
 
 ## Adding new dependencies
 ```shell
