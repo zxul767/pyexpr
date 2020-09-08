@@ -9,12 +9,12 @@ A toy example of symbolic differentiation in Python
   + A package manager used to handle dependencies and virtual environments
 
 ## Quick Start
-Run tests:
+### Run tests
 ```shell
 make check
 ```
 
-Run (code) diagnostics:
+### Run (code) diagnostics
 ```shell
 make doctor
 ```
@@ -23,7 +23,7 @@ The above command runs:
   + [radon](https://pypi.org/project/vulture/) to analyze cyclomatic complexity in the code
   + [bandit](https://pypi.org/project/vulture/) to look for security vulnerabilities
 
-Run quality assurance (i.e., run formatting and tests):
+### Run quality assurance (i.e., run formatting and tests):
 ```shell
 make qa
 ```
