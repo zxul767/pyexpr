@@ -6,18 +6,21 @@ WARN_COLOR=\x1b[33;01m
 
 all: check
 
+.install:
+	poetry install && touch .install
+
 qa: format check
 	@echo "$(OK_COLOR)QA checks completed!$(NO_COLOR)"
 
-check:
+check: .install
 	@echo "$(INFO_COLOR)==> Testing...$(NO_COLOR)"
 	poetry run python -m py.test --quiet
 
-format:
+format: .install
 	@echo "$(INFO_COLOR)==> Formatting...$(NO_COLOR)"
 	poetry run black .
 
-doctor:
+doctor: .install
 	@echo "$(INFO_COLOR)==> Checking maintainability...$(NO_COLOR)"
 	poetry run radon cc src
 	poetry run radon cc tests
